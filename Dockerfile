@@ -8,13 +8,11 @@ COPY . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 8080
+# Expose port (for Render or local use)
 EXPOSE 8080
 
-# Set environment variables for Flask (optional)
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_RUN_PORT=8080
+# Set environment variables (optional, better to pass securely at runtime)
+ENV AWS_DEFAULT_REGION=us-east-1
 
-# Run the Flask app
-CMD ["flask", "run"]
+# Run the Flask app using Python
+CMD ["python", "app.py"]
