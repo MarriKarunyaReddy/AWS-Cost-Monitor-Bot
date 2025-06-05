@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Cost Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>AWS Daily Costs</h1>
+    <table>
+        <tr><th>Date</th><th>Service</th><th>Cost (USD)</th></tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.date }}</td>
+            <td>{{ item.service }}</td>
+            <td>${{ "%.2f"|format(item.cost) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
