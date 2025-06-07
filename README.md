@@ -16,7 +16,6 @@ A simple Flask web app that visualizes AWS monthly service costs using Cost Expl
 - Deployed and viewable via live link
 
 ## 🚀 Live Demo
-[https://your-app-name.onrender.com](https://your-app-name.onrender.com)
-
+[AWS-Cost-Tracker-Dashboard](https://aws-cost-monitor-bot.onrender.com/)
 ## 👤 Author
 Developed by Marri Karunya Reddy
