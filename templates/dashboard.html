@@ -29,12 +29,21 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 40px auto;
             background-color: white;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .summary {
+            margin-bottom: 30px;
+        }
+
+        .summary p {
+            margin: 6px 0;
+            font-size: 1rem;
         }
 
         table {
@@ -59,12 +68,22 @@
             background-color: #f1f5f9;
         }
 
-        td {
-            color: #2d3748;
-        }
-
         td:last-child {
             font-weight: 500;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: #edf2f7;
+            color: #4a5568;
+            font-size: 0.95rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        footer p {
+            margin: 6px 0;
         }
 
         @media (max-width: 768px) {
@@ -83,6 +102,12 @@
         <h1>AWS Monthly Cost Dashboard</h1>
     </header>
     <div class="container">
+        <div class="summary">
+            <p><strong>Billing Period:</strong> {{ start_date }} to {{ end_date }}</p>
+            <p><strong>AWS Account ID:</strong> {{ account_id }}</p>
+            <p><strong>Total Cost:</strong> ${{ "%.2f"|format(total_cost) }}</p>
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -102,5 +127,12 @@
             </tbody>
         </table>
     </div>
+
+    <footer>
+        <p><strong>About This Project:</strong> This is a simple AWS cost tracking dashboard built to visualize monthly usage and charges, using real-time data pulled from AWS Cost Explorer APIs.</p>
+        <p><strong>Technologies Used:</strong> Python, Flask, AWS Boto3 SDK, HTML/CSS</p>
+        <p><strong>Purpose:</strong> This project demonstrates hands-on skills in backend integration, cloud API usage, and deploying full-stack applications. It’s a foundational tool for cost awareness in AWS environments.</p>
+        <p><em>Made by Marri Karunya Reddy</em></p>
+    </footer>
 </body>
 </html>
